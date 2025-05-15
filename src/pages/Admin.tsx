@@ -88,9 +88,9 @@ const AdminPage: React.FC = () => {
     setLoading(false);
   };
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: name === 'price' ? parseFloat(value) || 0 : value }));
+    setFormData(prev => ({ ...prev, [name]: name === 'price' ? parseFloat(value as string) || 0 : value }));
   };
 
   const handleSaveProduct = async (e: FormEvent) => {

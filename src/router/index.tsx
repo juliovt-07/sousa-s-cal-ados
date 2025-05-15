@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import HomePage from '../pages/Home';
 import CategoryPage from '../pages/Category';
 import ProductPage from '../pages/Product';
+import AdminPage from '../pages/Admin'; // Adicionando a importação da AdminPage
 // import CartPage from '../pages/Cart'; // If a dedicated cart page is needed
 import { CartProvider } from '../hooks/useCart';
 import CartSidebar from '../components/CartSidebar';
@@ -19,6 +20,7 @@ const AnimatedRoutes: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/category/:categoryId" element={<CategoryPage />} />
         <Route path="/product/:productId" element={<ProductPage />} />
+        <Route path="/admin" element={<AdminPage />} /> {/* Adicionando a rota para AdminPage */}
         {/* <Route path="/cart" element={<CartPage />} /> */}
         {/* Add other routes here */}
       </Routes>

@@ -2,7 +2,7 @@
   {
     "id": "s001",
     "name": "Instagram",
-    "url": "https://instagram.com/sousascalcados",
+    "url": "https://www.instagram.com/sousascalcadoss/?hl=pt-br",
     "icon": "InstagramLogoIcon",
     "active": true
   },
@@ -11,12 +11,12 @@
     "name": "Facebook",
     "url": "https://facebook.com/sousascalcados",
     "icon": "FacebookLogoIcon",
-    "active": true
+    "active": false
   },
   {
     "id": "s003",
     "name": "WhatsApp",
-    "url": "https://wa.me/5511999998888",
+    "url": "https://wa.me/5599981181281",
     "icon": "WhatsappLogoIcon",
     "active": true
   }

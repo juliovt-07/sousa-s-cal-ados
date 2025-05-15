@@ -19,8 +19,8 @@ interface Category {
 
 const Header: React.FC = () => {
   const { cartItems, openCart } = useCart();
-  const categories = useFetchData<Category[]>('/data/categories.json', { activeOnly: true });
-  // const settings = useFetchData<Settings>('/data/settings.json');
+  const categories = useFetchData<Category[]>('/categories.json', { activeOnly: true });
+  // const settings = useFetchData<Settings>('/settings.json');
 
   const totalItemsInCart = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 

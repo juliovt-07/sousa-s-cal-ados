@@ -15,7 +15,7 @@ interface Product {
 }
 
 const HomePage: React.FC = () => {
-  const products = useFetchData<Product[]>('/data/products.json', { activeOnly: true });
+  const products = useFetchData<Product[]>('/products.json', { activeOnly: true });
 
   const containerVariants = {
     hidden: { opacity: 0 },

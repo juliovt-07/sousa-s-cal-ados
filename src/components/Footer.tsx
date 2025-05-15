@@ -15,8 +15,8 @@ interface Settings {
 }
 
 const Footer: React.FC = () => {
-  const socials = useFetchData<SocialLink[]>('/data/socials.json', { activeOnly: true });
-  const settings = useFetchData<Settings>('/data/settings.json');
+  const socials = useFetchData<SocialLink[]>('/socials.json', { activeOnly: true });
+  const settings = useFetchData<Settings>('/settings.json');
   const currentYear = new Date().getFullYear();
 
   return (

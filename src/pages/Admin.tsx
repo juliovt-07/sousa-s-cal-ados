@@ -70,7 +70,7 @@ const AdminPage: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('/data/products.json');
+      const response = await fetch('/products.json');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -188,7 +188,7 @@ const AdminPage: React.FC = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('/data/categories.json');
+        const response = await fetch('/categories.json');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

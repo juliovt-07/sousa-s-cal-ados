@@ -11,7 +11,7 @@ interface Settings {
 
 const CheckoutButton: React.FC = () => {
   const { cartItems, getCartTotal } = useCart();
-  const settings = useFetchData<Settings>('/data/settings.json');
+  const settings = useFetchData<Settings>('/settings.json');
 
   const handleCheckout = () => {
     if (!settings || cartItems.length === 0) return;

@@ -22,7 +22,7 @@ export default async function handler(
     if (req.method === 'POST') {
         try {
             const products: Product[] = req.body;
-            const filePath = path.join(process.cwd(), 'public/data/products.json');
+            const filePath = path.join(process.cwd(), 'public/products.json');
 
             fs.writeFileSync(filePath, JSON.stringify(products, null, 2));
 

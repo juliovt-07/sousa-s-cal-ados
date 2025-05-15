@@ -16,7 +16,7 @@ export default defineConfig({
         server.middlewares.use("/api/update-products", (req, res, next) => {
           if (req.method === "POST") {
             const productsData = req;
-            const filePath = path.resolve(__dirname, "public/data/products.json");
+            const filePath = path.resolve(__dirname, "public/products.json");
 
             try {
               fs.writeFileSync(filePath, JSON.stringify(productsData, null, 2), "utf-8");

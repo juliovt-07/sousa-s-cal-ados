@@ -24,8 +24,8 @@ interface Category {
 const CategoryPage: React.FC = () => {
   const { categoryId } = useParams<{ categoryId: string }>();
 
-  const allProducts = useFetchData<Product[]>('/data/products.json', { activeOnly: true });
-  const categories = useFetchData<Category[]>('/data/categories.json', { activeOnly: true });
+  const allProducts = useFetchData<Product[]>('/products.json', { activeOnly: true });
+  const categories = useFetchData<Category[]>('/categories.json', { activeOnly: true });
 
   const currentCategory = categories?.find(cat => cat.id === categoryId);
 

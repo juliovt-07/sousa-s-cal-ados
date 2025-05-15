@@ -20,7 +20,7 @@ interface Product {
 
 const ProductDetail: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
-  const products = useFetchData<Product[]>('/data/products.json', { activeOnly: true });
+  const products = useFetchData<Product[]>('/products.json', { activeOnly: true });
   const { addToCart } = useCart();
 
   const product = products?.find(p => p.id === productId);
@@ -33,7 +33,7 @@ const ProductDetail: React.FC = () => {
     return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(price);
   };
 
-  const settings = useFetchData<any>("/data/settings.json"); // Fetch settings for WhatsApp link
+  const settings = useFetchData<any>("/settings.json"); // Fetch settings for WhatsApp link
 
   const handleBuyNow = () => {
     if (!settings || !product) return;

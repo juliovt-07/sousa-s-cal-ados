@@ -33,7 +33,7 @@ const CartSidebar: React.FC = () => {
     <AnimatePresence>
       {isCartOpen && (
         <motion.div
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
+          className="fixed inset-0 z-50 bg-black/75 backdrop-blur-lg"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -47,7 +47,7 @@ const CartSidebar: React.FC = () => {
           exit="closed"
           variants={sidebarVariants}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-          className="fixed top-0 right-0 h-full w-full max-w-md bg-background shadow-xl flex flex-col z-[60]"
+          className="fixed top-0 right-0 h-full w-full max-w-md bg-background shadow-xl flex flex-col z-[60] text-white"
         >
           <div className="flex items-center justify-between p-6 border-b">
             <h2 className="text-xl font-semibold">Seu Carrinho</h2>
@@ -88,7 +88,7 @@ const CartSidebar: React.FC = () => {
                         <Button 
                           variant="outline" 
                           size="icon" 
-                          className="h-6 w-6" 
+                          className="h-6 w-6 text-black" 
                           onClick={() => updateQuantity(item.id, item.quantity - 1)}
                           aria-label={`Diminuir quantidade de ${item.name}`}
                         >
@@ -98,7 +98,7 @@ const CartSidebar: React.FC = () => {
                         <Button 
                           variant="outline" 
                           size="icon" 
-                          className="h-6 w-6" 
+                          className="h-6 w-6 text-black" 
                           onClick={() => updateQuantity(item.id, item.quantity + 1)}
                           aria-label={`Aumentar quantidade de ${item.name}`}
                         >

@@ -1,0 +1,6 @@
+{
+  "whatsappNumber": "5599984738118",
+  "whatsappMessageTemplate": "Olá, Sousa's Calçados! Gostaria de finalizar minha compra. Itens: {{items}}. Total: {{total}}.",
+  "storeName": "Sousa's Calçados",
+  "currencySymbol": "R$"
+}

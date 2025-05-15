@@ -1,0 +1,22 @@
+[
+  {
+    "id": "c001",
+    "name": "Esportivos",
+    "active": true
+  },
+  {
+    "id": "c002",
+    "name": "Casuais Femininos",
+    "active": true
+  },
+  {
+    "id": "c003",
+    "name": "Sociais Masculinos",
+    "active": true
+  },
+  {
+    "id": "c004",
+    "name": "Botas e Coturnos",
+    "active": true
+  }
+]

@@ -28,10 +28,11 @@ const Header: React.FC = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
-          <Link to="/" className="mr-6 flex items-center space-x-2">
+          <Link to="/" className="mr-6 ml-4 flex items-center space-x-2">
             {/* <Icons.logo className="h-6 w-6" /> */}
+            <img src="/logo.png" alt="logo" width={70} />
             <span className="hidden font-bold sm:inline-block">
-              {settings?.storeName || 'Sousa\'s Calçados'}
+              {/* {settings?.storeName || 'Sousa\'s Calçados'} */}
             </span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -65,8 +66,9 @@ const Header: React.FC = () => {
             <SheetContent side="left">
               <Link to="/" className="flex items-center space-x-2 mb-6">
                  {/* <Icons.logo className="h-6 w-6" /> */}
+                 <img src="/logo.png" alt="logo" width={150} />
                 <span className="font-bold">
-                  {settings?.storeName || 'Sousa\'s Calçados'}
+                  {/* {settings?.storeName || 'Sousa\'s Calçados'} */}
                 </span>
               </Link>
               <nav className="flex flex-col space-y-3">
@@ -87,10 +89,11 @@ const Header: React.FC = () => {
         </div>
 
         {/* Mobile Store Name (centered when menu is on left) */}
-        <div className="flex flex-1 md:hidden items-center justify-center">
+        <div className="w-full flex md:hidden items-center justify-center">
             <Link to="/" className="flex items-center space-x-2">
+                <img src="/logo.png" alt="logo" width={70} />
                 <span className="font-bold">
-                    {settings?.storeName || 'Sousa\'s Calçados'}
+                    {/* {settings?.storeName || 'Sousa\'s Calçados'} */}
                 </span>
             </Link>
         </div>

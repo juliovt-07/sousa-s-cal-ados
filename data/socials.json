@@ -1,0 +1,23 @@
+[
+  {
+    "id": "s001",
+    "name": "Instagram",
+    "url": "https://instagram.com/sousascalcados",
+    "icon": "InstagramLogoIcon",
+    "active": true
+  },
+  {
+    "id": "s002",
+    "name": "Facebook",
+    "url": "https://facebook.com/sousascalcados",
+    "icon": "FacebookLogoIcon",
+    "active": true
+  },
+  {
+    "id": "s003",
+    "name": "WhatsApp",
+    "url": "https://wa.me/5511999998888",
+    "icon": "WhatsappLogoIcon",
+    "active": true
+  }
+]

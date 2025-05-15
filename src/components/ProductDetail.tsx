@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import useFetchData from '../hooks/useFetchData';
@@ -9,31 +9,75 @@ import { Badge } from '@/components/ui/badge'; // Assuming shadcn/ui setup
 interface Product {
   id: string;
   name: string;
+  category: string;
   price: number;
   image: string;
   description: string;
-  isNew?: boolean;
-  category?: string;
-  active?: boolean;
-  // Add other product properties as needed
+  isNew: boolean;
+  active: boolean;
 }
 
-const ProductDetail: React.FC = () => {
-  const { productId } = useParams<{ productId: string }>();
-  const products = useFetchData<Product[]>('/products.json', { activeOnly: true });
-  const { addToCart } = useCart();
+interface ProductDetailProps {
+    productId: string | undefined;
+}
 
-  const product = products?.find(p => p.id === productId);
+const ProductDetail: React.FC<ProductDetailProps> = ({ productId }) => {
+  const { addToCart } = useCart();
+  const [error, setError] = useState<string | null>(null);
+  const [product, setProduct] = useState<Product | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const response = await fetch('/products.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data: Product[] = await response.json();
+        // Find the product by ID
+        const foundProduct = data.find(p => p.id === productId);
+
+        if (foundProduct) {
+          setProduct(foundProduct);
+        } else {
+          setError('Produto não encontrado.');
+        }
+      } catch (err) {
+        setError('Falha ao carregar os detalhes do produto.');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    if (productId) {
+      fetchProduct();
+    } else {
+      setError('ID do produto não fornecido.');
+      setLoading(false);
+    }
+  }, [productId, addToCart]);
+  // Fetch settings for WhatsApp link
+  const settings = useFetchData<any>("/settings.json");
+
+  if (loading) {
+    return <p>Carregando detalhes do produto...</p>;
+  }
+
+  if (error) {
+    return <p className="text-red-500">{error}</p>;
+  }
 
   if (!product) {
-    return <div className="container mx-auto px-4 py-8 text-center">Produto não encontrado.</div>;
+    return <p>Produto não encontrado.</p>;
   }
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(price);
   };
 
-  const settings = useFetchData<any>("/settings.json"); // Fetch settings for WhatsApp link
 
   const handleBuyNow = () => {
     if (!settings || !product) return;
